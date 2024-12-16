@@ -1,6 +1,7 @@
 'use client'
 import Image from "next/image";
 import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
+import { Cover } from "@/components/ui/cover";
 // import * as reactSpring from '@react-spring/three'
 
 export default function Home() {
@@ -29,7 +30,7 @@ export default function Home() {
           <div className="flex flex-col justify-center h-[80%]">
             <span className="text-[#4e69e0] font-[600]">Hi,</span>
             <h2 className="bg-clip-text text-transparent text-start bg-gradient-to-b from-neutral-800 to-neutral-500 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
-              Naimur, <br /> Frontend developer.
+              Naimur, <br /> Frontend <Cover>Developer</Cover>
             </h2>
           </div>
         </div>
