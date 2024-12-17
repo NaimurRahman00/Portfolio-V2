@@ -24,6 +24,7 @@ export default function Home() {
 
       {/* FORGROUND PART */}
       <div className="w-full overflow-x-hidden min-h-screen grid lg:grid-cols-[1fr_0.6fr_0.4fr] gap-5 relative backdrop-blur-md z-10">
+      {/* 1ST COLUMN */}
         <div className="max-w-[600px] w-[90%] mx-auto py-[30px] z-10">
           <a href="#">
             <h1 className="text-white text-4xl py-5">Naimur</h1>
@@ -48,8 +49,11 @@ export default function Home() {
         <div className="w-full h-full flex items-end bg-[#0d0d0e74] z-10">
           <Image src="/naimur.png" width={800} height={1200} alt="Naimur" className="w-full max-h-screen object-contain object-left transform scale-x-[-1]" />
         </div>
-        <div>
-
+        {/* 3RD COLUMN */}
+        <div className="w-[90%] mx-auto py-[30px] flex flex-col items-center z-20">
+          <a href="#" className="max-w-[130px] w-full h-[40px] flex justify-center items-center border border-1 border-[#333333] text-white font-semibold rounded-[30px] mx-auto pb-[2px]">
+            Hire me
+          </a>
         </div>
       </div>
     </>
