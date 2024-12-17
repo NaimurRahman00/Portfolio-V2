@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
 import { Cover } from "@/components/ui/cover";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 // import * as reactSpring from '@react-spring/three'
 
 export default function Home() {
@@ -21,27 +22,35 @@ export default function Home() {
         />
       </ShaderGradientCanvas>
 
-      {/* Forground part */}
-      <div className="w-full overflow-x-hidden min-h-screen grid lg:grid-cols-[1fr_0.6fr_0.4fr] gap-5">
+      {/* FORGROUND PART */}
+      <div className="w-full overflow-x-hidden min-h-screen grid lg:grid-cols-[1fr_0.6fr_0.4fr] gap-5 relative backdrop-blur-md z-10">
         <div className="max-w-[600px] w-[90%] mx-auto py-[30px] z-10">
           <a href="#">
-            <h1 className="text-white text-4xl">Naimur</h1>
+            <h1 className="text-white text-4xl py-5">Naimur</h1>
           </a>
           <div className="flex flex-col justify-center h-[80%]">
-            <span className="text-[#4e69e0] font-[600]">Hi,</span>
+            <span className="text-[#4e69e0] font-[600] text-lg">Hi There,</span>
+            <span className="text-[#57608b] font-[600] text-3xl">My name is</span>
             <h2 className="bg-clip-text text-transparent text-start bg-gradient-to-b from-neutral-800 to-neutral-500 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
-              Naimur, <br /> Frontend <Cover>Developer</Cover>
+              Naimur, <br /> Frontend <Cover>Developer.</Cover>
             </h2>
             <a href="#" className="text-white border-b border-1 border-[#525252] hover:p-[10px] hover:bg-[#5070ff2f] transition-all ease-in-out mr-auto py-[10px] font-semibold">
               Hire me &rarr;
             </a>
+
+            {/* RESUME BUTTON */}
+            <div className="mt-14">
+              <HoverBorderGradient>Download my Resume</HoverBorderGradient>
+            </div>
           </div>
         </div>
         {/* HERO IMAGE */}
         <div className="w-full h-full flex items-end bg-[#0d0d0e74] z-10">
           <Image src="/naimur.png" width={800} height={1200} alt="Naimur" className="w-full max-h-screen object-contain object-left transform scale-x-[-1]" />
         </div>
-        <div></div>
+        <div>
+
+        </div>
       </div>
     </>
 
