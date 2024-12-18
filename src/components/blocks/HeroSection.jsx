@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
 import { Cover } from "@/components/ui/cover";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
-import { Skills } from "@/components/blocks/skills";
+import { Skills } from "@/components/ui/Skills";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 // import * as reactSpring from '@react-spring/three'
