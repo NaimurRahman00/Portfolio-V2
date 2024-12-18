@@ -1,62 +1,62 @@
 import { cn } from "@/lib/utils";
 import {
-    IconAdjustmentsBolt,
-    IconCloud,
-    IconCurrencyDollar,
-    IconEaseInOut,
-    IconHeart,
-    IconHelp,
-    IconRouteAltLeft,
-    IconTerminal2,
+    IconBrowser,
+    IconBrowserCheck,
+    IconBug,
+    IconDeviceMobile,
+    IconLayoutDashboard,
+    IconLock,
+    IconPlayerPlay,
+    IconServer,
 } from "@tabler/icons-react";
 import { Cover } from "../ui/cover";
 
 export function Service() {
     const features = [
         {
-            title: "Built for developers",
+            title: "Front-End Development",
             description:
-                "Built for engineers, developers, dreamers, thinkers and doers.",
-            icon: <IconTerminal2 />,
+                "Crafting responsive, interactive, and user-friendly web interfaces.",
+            icon: <IconLayoutDashboard size={24} />,
         },
         {
-            title: "Ease of use",
+            title: "Backend Development",
             description:
-                "It's as easy as using an Apple, and as expensive as buying one.",
-            icon: <IconEaseInOut />,
+                "Building secure, efficient, and scalable server-side applications.",
+            icon: <IconServer size={24} />,
         },
         {
-            title: "Pricing like no other",
+            title: "MERN Website",
             description:
-                "Our prices are best in the market. No cap, no lock, no credit card required.",
-            icon: <IconCurrencyDollar />,
+                "Crafting seamless web experiences with MongoDB, Express, React, Node.",
+            icon: <IconBrowser size={24} />,
         },
         {
-            title: "100% Uptime guarantee",
-            description: "We just cannot be taken down by anyone.",
-            icon: <IconCloud />,
+            title: "Responsive Web Design",
+            description: "Ensuring websites look great on all devices and screen sizes.",
+            icon: <IconDeviceMobile size={24} />,
         },
         {
-            title: "Multi-tenant Architecture",
-            description: "You can simply share passwords instead of buying new seats",
-            icon: <IconRouteAltLeft />,
-        },
-        {
-            title: "24/7 Customer Support",
+            title: "Single Page Applications",
             description:
-                "We are available a 100% of the time. Atleast our AI Agents are.",
-            icon: <IconHelp />,
+                "Developing fast and interactive web apps using modern frameworks.",
+            icon: <IconBrowserCheck size={24} />,
         },
         {
-            title: "Money back guarantee",
+            title: "Bug Fixing & Optimization",
+            description: "Diagnosing issues and improving performance for flawless websites.",
+            icon: <IconBug size={24} />,
+        },
+        {
+            title: "Authentication",
+            description: "Implementing secure user login systems with Firebase.", //JWT and OAuth.
+            icon: <IconLock size={24} />,
+        },
+        {
+            title: "Interactive Animations",
             description:
-                "If you donot like EveryAI, we will convince you to like us.",
-            icon: <IconAdjustmentsBolt />,
-        },
-        {
-            title: "And everything else",
-            description: "I just ran out of copy ideas. Accept my sincere apologies",
-            icon: <IconHeart />,
+                "Adding engaging animations for improved user interaction.",
+            icon: <IconPlayerPlay size={24} />,
         },
     ];
     return (
