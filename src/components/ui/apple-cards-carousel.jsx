@@ -47,21 +47,21 @@ export const Carousel = ({
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+      carouselRef.current.scrollBy({ left: -450, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+      carouselRef.current.scrollBy({ left: 450, behavior: "smooth" });
     }
   };
 
   const handleCardClose = (index) => {
     if (carouselRef.current) {
-      const cardWidth = isMobile() ? 230 : 384; // (md:w-96)
+      const cardWidth = isMobile() ? 230 : 300; // (md:w-96)
       const gap = isMobile() ? 4 : 8;
-      const scrollPosition = (cardWidth + gap) * (index + 1);
+      const scrollPosition = (cardWidth + gap) * (index);
       carouselRef.current.scrollTo({
         left: scrollPosition,
         behavior: "smooth",
@@ -109,7 +109,7 @@ export const Carousel = ({
                   },
                 }}
                 key={"card" + index}
-                className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl">
+                className="last:pr-[5%] md:last:pr-[33%] rounded-3xl">
                 {item}
               </motion.div>
             ))}
