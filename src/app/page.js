@@ -1,3 +1,4 @@
+import { Contact } from "@/components/blocks/Contact";
 import HeroSection from "@/components/blocks/HeroSection";
 import { Projects } from "@/components/blocks/Projects";
 import { Resume } from "@/components/blocks/Resume";
@@ -13,6 +14,7 @@ export default function Home() {
       <Service/>
       <Projects/>
       <Resume/>
+      <Contact/>
     </>
 
   );
