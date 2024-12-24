@@ -1,11 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-import {
-    IconBrandGithub,
-    IconBrandGoogle,
-    IconBrandOnlyfans,
-} from "@tabler/icons-react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Cover } from "../ui/cover";
@@ -28,7 +23,7 @@ export function Contact() {
         setFormData((prevData) => ({ ...prevData, [name]: value }));
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             if (!formData?.firstName || !formData?.lastName || !formData?.email || !formData?.message) {
@@ -37,15 +32,62 @@ export function Contact() {
                     message: 'Please fill all fields!',
                     success: false
                 })
+                return;
+            }
+
+            setLoadingMessage({
+                loading: true,
+                message: '',
+                success: false,
+            })
+
+            const formatData = {
+                name: `${formData?.firstName} ${formData?.lastName}`,
+                email: formData?.email,
+                message: formData?.message,
+            }
+
+            const response = await fetch('/api/contact', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formatData),
+            })
+
+            if (!response.ok) {
+                throw new Error("Network res was not okay! fix it")
+            }
+
+            const res = await response.json();
+
+            if (res?.message) {
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    message: '',
+                });
+
+                setLoadingMessage({
+                    loading: false,
+                    message: res?.message,
+                    success: true,
+                })
             } else {
                 setLoadingMessage({
                     loading: false,
-                    message: 'Success! Thanks for messaging.',
-                    success: true
+                    message: "Failed to send message!",
+                    success: false,
                 })
             }
         } catch (error) {
-
+            setLoadingMessage({
+                loading: false,
+                message: "Failed to send message!",
+                success: false,
+            })
+            console.log(error)
         }
     };
 
@@ -80,7 +122,7 @@ export function Contact() {
                 <button
                     className="bg-gradient-to-br relative group/btn from-blue-800 to-blue-950 block w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                     type="submit">
-                    Submit
+                    {!loadingMessage?.loading ? 'Submit' : '....'}
                     <BottomGradient />
                 </button>
             </form>
